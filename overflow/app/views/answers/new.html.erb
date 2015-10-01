@@ -1,0 +1,12 @@
+<h1>Reply</h1>
+
+<%= form_for :answer, url: question_answers_path do |f| %>
+
+  <p>
+    <%= f.text_area :description, :placeholder => "Your Reply Here" %>
+  </p>
+
+  <p>
+    <%= f.submit "Submit Reply" %>
+  </p>
+<% end %>

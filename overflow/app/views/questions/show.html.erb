@@ -1,7 +1,24 @@
 <h1><%= @question.title %></h1>
 
-<h3>Asked by: <%= @question.user %> </h3>
+<h3>Asked By:</h3>
+<p><%= @question.user.username %></p>
 
-<h3>Description:<%= @question.description %></h3>
+<h3>Description:</h3>
+<p><%= @question.description %></p>
 
-<%= link_to 'Questions', questions_path %>
+<h3>Answers</h3>
+
+<p>
+<% @all_answers.each do |answer| %>
+  <b>Description:</b> <%= answer.description %><br>
+  <b>Answered By:</b> <%= answer.user.username %><br>
+  <br>
+<% end %>
+</p>
+
+
+<p>
+<%= link_to 'Reply', new_question_answer_path(@question) %><br><br>
+<%= link_to 'Questions Home Page', questions_path %>
+</p>
+
